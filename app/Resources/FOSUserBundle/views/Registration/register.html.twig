@@ -1,0 +1,16 @@
+{% extends "@FOSUser/layout.html.twig" %}
+
+{% block fos_user_content %}
+    <div class="row">
+        <div class="col-xs-12 pricing-header px-3 py-3 pt-md-5 pb-md-4 mx-auto text-center">
+            <h1 class="display-4">{{ "pages.registration.header_title"|trans  }}</h1>
+            <p class="lead">{{ "pages.registration.header_desc"|trans  }}</p>
+        </div>
+        <div class="col-xs-12 col-md-7">
+            {% include "@FOSUser/Registration/register_content.html.twig" %}
+        </div>
+        <div class="d-none d-sm-block col-md-5">
+            {{ "pages.registration.advertisment"|trans  }}
+        </div>
+    </div>
+{% endblock fos_user_content %}

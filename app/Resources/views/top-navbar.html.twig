@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block topnavbar %}
+<div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom shadow-sm">
+    <h5 class="my-0 mr-md-auto font-weight-normal">CMSMonitor</h5>
+
+    {% if app.user %}
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="{{ path('my_sites') }}">Moje witryny</a>
+            <a class="p-2 text-dark" href="{{ path('profile') }}">Profil</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="{{ path('fos_user_registration_register') }}">Wyloguj</a>
+    {% else %}
+        <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="{{ path('home') }}">Home</a>
+            <a class="p-2 text-dark" href="{{ path('about_us') }}">O nas</a>
+            <a class="p-2 text-dark" href="{{ path('pricing') }}">Cennik</a>
+        </nav>
+        <a class="btn btn-outline-primary" href="{{ path('fos_user_registration_register') }}">Rejestracja</a>
+    {% endif %}
+
+</div>
+{% endblock %}

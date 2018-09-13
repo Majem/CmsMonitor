@@ -5,6 +5,11 @@
     <meta name="author" content="">
     <title>Pricing example for Bootstrap</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
+    {% if additional_css is defined %}
+        {% for css in additional_css %}
+            <link rel="stylesheet" href="{{ asset(css) }}" >
+        {% endfor %}
+    {% endif %}
     <script src="{{ asset('js/jquery-3.3.1.slim.min.js') }}" ></script>
     <script src="{{ asset('js/popper.min.js') }}" ></script>
     <script src="{{ asset('js/bootstrap.min.js') }}" ></script>

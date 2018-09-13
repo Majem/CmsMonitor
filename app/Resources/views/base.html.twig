@@ -5,7 +5,15 @@
 </head>
 
 <body>
-{% block body %}{% endblock %}
+{{ block("topnavbar", "top-navbar.html.twig") }}
+
+<div class="container">
+    {% block body %} {% endblock %}
+
+    <footer class="pt-4 my-md-5 pt-md-5 border-top">
+        {{ block("footer", "footer.html.twig") }}
+    </footer>
+</div>
 
 {% block body_javascript %}{% endblock %}
 </body>

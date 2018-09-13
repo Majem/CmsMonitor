@@ -1,0 +1,25 @@
+{%- block form_row -%}
+    {%- set widget_attr = {} -%}
+    <div  class="form-group row">
+        {{- form_label(form) -}}
+        {{- form_errors(form) -}}
+        <div class="col-8">
+            {{- form_widget(form, widget_attr) -}}
+        </div>
+
+
+    </div>
+{%- endblock form_row -%}
+
+{%- block form_label -%}
+    <label for="{{ id }}" class="col-4 col-form-label">{{ label|trans({}, translation_domain)  }}</label>
+{%- endblock -%}
+
+{%- block form_widget_simple -%}
+    {%- set type = type|default('text') -%}
+    {%- if type == 'range' or type == 'color' -%}
+        {# Attribute "required" is not supported #}
+        {%- set required = false -%}
+    {%- endif -%}
+    <input class="form-control" type="{{ type }}" {{ block('widget_attributes') }} {% if value is not empty %}value="{{ value }}" {% endif %}/>
+{%- endblock form_widget_simple -%}
