@@ -2,7 +2,11 @@
 {% extends 'base.html.twig' %}
 
 {% block body %}
-
+<style>
+    .ws-sites-table .table td,.ws-sites-table .table th {
+        padding: .5rem;
+    }
+</style>
 
     {% if websites | length == 0 %}
     {% else %}
@@ -31,7 +35,7 @@
                         <td>
                             <div class="system-details" style="width: 55px;">
                                 <i style="width: 100%;text-align: center;" class="fa fa-joomla" aria-hidden="true"></i>
-                                <p style="font-size: 12px;text-align: center;width: 100%;margin-bottom: 0px;line">3.8.4</p>
+                                <p style="font-size: 12px;text-align: center;width: 100%;margin-bottom: 0px;line-height: 12px;">3.8.4</p>
                             </div>
                         </td>
                     </tr>
